@@ -2,10 +2,10 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import IconBottom from "../components/icons/iconBottom";
-import Feed from '../screen/Feed';
-import History from '../screen/History';
-import Home from '../screen/Home';
-import Review from '../screen/Review';
+import Feed from '../screen/app/Feed';
+import History from '../screen/app/History';
+import Home from '../screen/app/Home';
+import Review from '../screen/app/Review';
 import "react-native-gesture-handler";
 
 

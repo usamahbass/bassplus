@@ -1,15 +1,8 @@
-import React, { useEffect } from "react";
-import SplashScreen from "react-native-splash-screen";
-import HomeStack from "./routes/homeStack";
+import React from 'react'
+import AppStack from './routes/appStack'
 
-const App = () => {
-  useEffect(() => {
-    SplashScreen.hide()
-  },[])
-
+export default function App() {
   return (
-    <HomeStack/>
+    <AppStack/>
   )
 }
-
-export default App;
