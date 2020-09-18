@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from "../screen/other/Login";
 import FirstApp from "../screen/other/firstApp";
 import HomeRoute from "./homeStack";
+import "react-native-gesture-handler";
 
 const ScreenStack = createStackNavigator() 
 
