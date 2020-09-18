@@ -13,7 +13,9 @@ const FirstStack = () => {
         <NavigationContainer>
             <ScreenStack.Navigator>
                 <ScreenStack.Screen name="FirstApp" component={FirstApp} options={{headerShown: false}} />
-                <ScreenStack.Screen name="Login" component={Login} />
+                <ScreenStack.Screen name="Login" component={Login} options={{
+                    headerShown: false
+                }} />
                 <ScreenStack.Screen name="Home" component={HomeRoute} />
             </ScreenStack.Navigator>
         </NavigationContainer>

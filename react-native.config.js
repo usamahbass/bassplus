@@ -3,5 +3,5 @@ module.exports = {
         ios: {},
         android: {}
     },
-    assets: ['./src/assets/fonts/Poppins-Regular.ttf']
+    assets: ['./src/assets/fonts/']
 }

@@ -20,9 +20,9 @@ export const FirstStep = StyleSheet.create({
     top: 400,
     left: 75,
     fontSize: 24,
-    fontWeight: '700',
+    fontWeight: '600',
+    fontFamily: "Nunito-Bold",
     textAlign: 'center',
-    fontFamily: 'Poppins-Regular',
     color: '#fff',
   },
   paragraph: {
@@ -34,6 +34,7 @@ export const FirstStep = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
     textAlign: 'center',
+    fontFamily: "Nunito-Regular",
     color: '#ffffff',
   },
   button: {
