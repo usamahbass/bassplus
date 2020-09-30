@@ -61,9 +61,9 @@ export default function Login({navigation}) {
 
         <View>
           <Text
-            onPress={() => console.log('testing')}
+            onPress={() => navigation.navigate('ForgotPassword')}
             style={LoginStyles.forgotPassword}>
-            Forgot Password ?
+            Forgot password ?
           </Text>
         </View>
 

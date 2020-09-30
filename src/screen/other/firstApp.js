@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { View, Text, Image } from 'react-native';
-import { FirstStep } from '../../styles/firstStep/styles';
+import React, {useEffect} from 'react';
+import {View, Text, Image} from 'react-native';
+import {FirstStep} from '../../styles/firstStep/styles';
 import SplashScreen from 'react-native-splash-screen';
 import CustomButton from '../../components/customButton';
 
@@ -11,7 +11,10 @@ export default function FirstApp({navigation}) {
 
   return (
     <View style={FirstStep.containerApp}>
-      <Image style={FirstStep.imageApp} source={require("../../assets/image/medical-team.png")} />
+      <Image
+        style={FirstStep.imageApp}
+        source={require('../../assets/image/medical-team.png')}
+      />
 
       <Text style={FirstStep.title}>Find your specialist!</Text>
       <Text style={FirstStep.paragraph}>
@@ -20,7 +23,7 @@ export default function FirstApp({navigation}) {
       <CustomButton
         buttonStyle={FirstStep.button}
         buttonText={FirstStep.buttonText}
-        onPress={() => navigation.push('Login')}>
+        onPress={() => navigation.navigate('Login')}>
         Get Started
       </CustomButton>
     </View>
