@@ -1,18 +1,10 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TextInput,
-  Image,
-  ToastAndroid,
-} from 'react-native';
+import {View, Text, StyleSheet, TextInput, ToastAndroid} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-import logo from '../../assets/image/logo.png';
 import CustomButton from '../../components/customButton';
 import {LoginStyles} from '../../styles/login/styles';
 
@@ -29,28 +21,34 @@ const ForgotPassword = ({navigation}) => {
 
   return (
     <View style={style.container}>
-      <View style={style.wrapLogo}>
-        <Image source={logo} />
+      <View style={style.wrapElements}>
+        <View style={style.wrapText}>
+          <Text style={style.resetPassword}>Reset Password</Text>
+          <Text style={style.desc}>
+            Please enter your email below to receive your password reset
+            instructions.
+          </Text>
+        </View>
+        <View style={style.wrapInput}>
+          <Text style={style.label}>Email:</Text>
+          <TextInput
+            value={email}
+            onChangeText={(value) => setEmail(value)}
+            placeholder="email.."
+            style={style.textInput}
+            keyboardType="email-address"
+          />
+        </View>
+        <CustomButton
+          onPress={() => {
+            toast();
+            navigation.navigate('Login');
+          }}
+          buttonStyle={[LoginStyles.button, style.btn]}
+          buttonText={LoginStyles.buttonText}>
+          Send Email
+        </CustomButton>
       </View>
-      <View style={style.wrapInput}>
-        <Text style={style.label}>Email:</Text>
-        <TextInput
-          value={email}
-          onChangeText={(value) => setEmail(value)}
-          placeholder="email.."
-          style={style.textInput}
-          keyboardType="email-address"
-        />
-      </View>
-      <CustomButton
-        onPress={() => {
-          toast();
-          navigation.navigate('Login');
-        }}
-        buttonStyle={[LoginStyles.button, style.btn]}
-        buttonText={LoginStyles.buttonText}>
-        Kirim
-      </CustomButton>
     </View>
   );
 };
@@ -60,11 +58,7 @@ export default ForgotPassword;
 export const style = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-  },
-  wrapLogo: {
-    alignItems: 'center',
-    marginTop: hp('20%'),
+    backgroundColor: 'white',
   },
   label: {
     fontFamily: 'Nunito-Regular',
@@ -83,5 +77,18 @@ export const style = StyleSheet.create({
   },
   btn: {
     left: 0,
+  },
+  resetPassword: {
+    fontFamily: 'Nunito-Bold',
+    fontSize: hp('3%'),
+  },
+  desc: {
+    fontFamily: 'Nunito-Regular',
+    fontSize: hp('2%'),
+    color: '#B0B0B0',
+    width: wp('80%'),
+  },
+  wrapElements: {
+    alignItems: 'center',
   },
 });

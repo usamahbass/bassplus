@@ -28,7 +28,10 @@ const FirstStack = () => {
         />
         <ScreenStack.Screen name="Home" component={HomeRoute} />
         <ScreenStack.Screen
-          options={{headerShown: null}}
+          options={{
+            headerTitleStyle: {display: 'none'},
+            headerStyle: {elevation: 0},
+          }}
           name="ForgotPassword"
           component={ForgotPassword}
         />
