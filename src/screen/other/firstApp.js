@@ -15,17 +15,20 @@ export default function FirstApp({navigation}) {
         style={FirstStep.imageApp}
         source={require('../../assets/image/medical-team.png')}
       />
-
-      <Text style={FirstStep.title}>Find your specialist!</Text>
-      <Text style={FirstStep.paragraph}>
-        Now it’s so easy to make an appointment with your doctor
-      </Text>
-      <CustomButton
-        buttonStyle={FirstStep.button}
-        buttonText={FirstStep.buttonText}
-        onPress={() => navigation.navigate('Login')}>
-        Get Started
-      </CustomButton>
+      <View style={FirstStep.wrapText}>
+        <Text style={FirstStep.title}>Find your specialist!</Text>
+        <Text style={FirstStep.paragraph}>
+          Now it’s so easy to make an appointment with your doctor
+        </Text>
+      </View>
+      <View style={FirstStep.wrapBtn}>
+        <CustomButton
+          buttonStyle={FirstStep.button}
+          buttonText={FirstStep.buttonText}
+          onPress={() => navigation.navigate('Login')}>
+          Get Started
+        </CustomButton>
+      </View>
     </View>
   );
 }

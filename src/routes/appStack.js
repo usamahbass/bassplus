@@ -12,12 +12,12 @@ const ScreenStack = createStackNavigator();
 const FirstStack = () => {
   return (
     <NavigationContainer>
-      <ScreenStack.Navigator initialRouteName="ForgotPassword">
-        {/* <ScreenStack.Screen
+      <ScreenStack.Navigator>
+        <ScreenStack.Screen
           name="FirstApp"
           component={FirstApp}
           options={{headerShown: false}}
-        /> */}
+        />
         <ScreenStack.Screen
           name="Login"
           component={Login}

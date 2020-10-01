@@ -1,4 +1,8 @@
 import {StyleSheet} from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 
 export const FirstStep = StyleSheet.create({
   containerApp: {
@@ -7,39 +11,32 @@ export const FirstStep = StyleSheet.create({
     backgroundColor: '#384DFE',
   },
   imageApp: {
-    position: 'absolute',
-    width: 500,
-    height: 250,
-    left: -60,
-    top: 127,
+    width: wp('100%'),
+    height: hp('25%'),
+    alignItems: 'center',
+    marginTop: hp('20%'),
+  },
+  wrapText: {
+    alignItems: 'center',
   },
   title: {
-    position: 'absolute',
     width: 219,
     height: 33,
-    top: 400,
-    left: 75,
     fontSize: 24,
     fontWeight: '600',
-    fontFamily: "Nunito-Bold",
-    textAlign: 'center',
+    fontFamily: 'Nunito-Bold',
     color: '#fff',
+    textAlign: 'center',
   },
   paragraph: {
-    position: 'absolute',
     width: 298,
-    height: 44,
-    left: 39,
-    top: 450,
     fontSize: 14,
     fontWeight: '600',
     textAlign: 'center',
-    fontFamily: "Nunito-Regular",
+    fontFamily: 'Nunito-Regular',
     color: '#ffffff',
   },
   button: {
-    top: 520,
-    left: 70,
     width: 223,
     height: 48,
     justifyContent: 'center',
@@ -52,5 +49,9 @@ export const FirstStep = StyleSheet.create({
     lineHeight: 22,
     color: '#ffffff',
     textAlign: 'center',
+  },
+  wrapBtn: {
+    alignItems: 'center',
+    marginTop: hp('10%'),
   },
 });
