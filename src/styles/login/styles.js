@@ -4,6 +4,7 @@ export const LoginStyles = StyleSheet.create({
   container: {
     height: '100%',
     backgroundColor: '#FCFCFC',
+    alignItems: 'center',
   },
   logo: {
     width: 79,
