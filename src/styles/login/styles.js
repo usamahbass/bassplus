@@ -1,19 +1,22 @@
 import {StyleSheet} from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 
 export const LoginStyles = StyleSheet.create({
   container: {
     height: '100%',
     backgroundColor: '#FCFCFC',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   logo: {
     width: 79,
     height: 79,
-    left: 148,
   },
   title: {
     top: 20,
-    left: 131,
     fontWeight: '600',
     fontSize: 16,
     fontFamily: 'Nunito-Bold',
@@ -21,7 +24,7 @@ export const LoginStyles = StyleSheet.create({
   },
   label: {
     top: 50,
-    left: 24,
+
     fontSize: 14,
     fontWeight: '600',
     lineHeight: 18,
@@ -32,7 +35,7 @@ export const LoginStyles = StyleSheet.create({
     width: 327,
     height: 48,
     top: 60,
-    left: 24,
+
     marginBottom: 30,
     backgroundColor: '#FFFFFF',
     borderRadius: 6,
@@ -44,14 +47,14 @@ export const LoginStyles = StyleSheet.create({
     shadowColor: 'rgba(0, 0, 0, 0.07)',
   },
   eyePassword: {
-    left: 313,
     bottom: 5,
+    left: 300,
   },
   button: {
     width: 327,
     height: 46,
     top: 24,
-    left: 24,
+
     borderRadius: 6,
     backgroundColor: '#384DFE',
   },
@@ -65,29 +68,20 @@ export const LoginStyles = StyleSheet.create({
   },
   forgotPassword: {
     top: 50,
-    left: 10,
     fontFamily: 'Nunito-Regular',
     fontWeight: 'bold',
     fontSize: 14,
     lineHeight: 19,
     color: '#B0B0B0',
-    textAlign: 'center',
   },
-  // separatorContainer: {
-  //   flexDirection: "row",
-  //   alignItems: "center",
-  //   top: 100
-  // },
-  // separator: {
-  //   flex: 1,
-  //   height: 1,
-  //   backgroundColor: "#B0B0B0"
-  // },
-  // separatorText: {
-  //   width: "100%",
-  //   color: "#B0B0B0",
-  //   textAlign: "center"
-  // }
+  register: {
+    top: 50,
+    fontFamily: 'Nunito-Regular',
+    fontWeight: 'bold',
+    fontSize: 14,
+    lineHeight: 19,
+    color: '#B0B0B0',
+  },
   socialContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -102,5 +96,10 @@ export const LoginStyles = StyleSheet.create({
   socialText: {
     color: '#ffffff',
     fontFamily: 'Nunito-Regular',
+  },
+  wrapRegisterAndForgotPassword: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    width: wp('100%'),
   },
 });
