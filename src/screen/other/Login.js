@@ -8,12 +8,12 @@ import {
   Keyboard,
   TouchableOpacity,
 } from 'react-native';
-import { LoginStyles } from '../../styles/login/styles';
+import {LoginStyles} from '../../styles/login/styles';
 import EyePassword from 'react-native-vector-icons/Ionicons';
 import CustomButton from '../../components/customButton';
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export default function Login() {
+export default function Login({navigation}) {
   const [show, setShow] = React.useState(true);
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -44,18 +44,27 @@ export default function Login() {
           <TouchableOpacity
             onPress={() => setShow(!show)}
             style={LoginStyles.eyePassword}>
-            <EyePassword name={show ? 'eye-off' : 'eye'} size={24} color="#D0C9D6" />
+            <EyePassword
+              name={show ? 'eye-off' : 'eye'}
+              size={24}
+              color="#D0C9D6"
+            />
           </TouchableOpacity>
         </View>
 
         <CustomButton
+          onPress={() => navigation.navigate('Home')}
           buttonStyle={LoginStyles.button}
           buttonText={LoginStyles.buttonText}>
           Login
         </CustomButton>
 
         <View>
-            <Text onPress={() => console.log("testing")} style={LoginStyles.forgotPassword}>Forgot Password ?</Text>
+          <Text
+            onPress={() => navigation.navigate('ForgotPassword')}
+            style={LoginStyles.forgotPassword}>
+            Forgot password ?
+          </Text>
         </View>
 
         {/* <View style={LoginStyles.separatorContainer}>
@@ -65,19 +74,24 @@ export default function Login() {
                     </View>
             <View style={LoginStyles.separator} />
         </View> */}
+        {/* 
+        <View style={LoginStyles.socialContainer}>
+          <CustomButton
+            buttonStyle={LoginStyles.socialButton}
+            buttonText={LoginStyles.socialText}>
+            <Icon name="facebook" />
+            Login with Facebook
+          </CustomButton> */}
 
-        <View style={LoginStyles.socialContainer} >
-            <CustomButton buttonStyle={LoginStyles.socialButton} buttonText={LoginStyles.socialText} >
-                <Icon name="facebook"/>
-                Login with Facebook
-            </CustomButton>
-
-            <CustomButton buttonStyle={{...LoginStyles.socialButton, ...LoginStyles.socialDanger}} buttonText={LoginStyles.socialText}>
-                <Icon name="google"/>
-                Login with Google
-            </CustomButton>
-        </View>
-
+        {/* <CustomButton
+            buttonStyle={{
+              ...LoginStyles.socialButton,
+              ...LoginStyles.socialDanger,
+            }}
+            buttonText={LoginStyles.socialText}>
+            <Icon name="google" />
+            Login with Google
+          </CustomButton> */}
       </View>
     </TouchableWithoutFeedback>
   );

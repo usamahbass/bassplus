@@ -88,18 +88,18 @@ export const LoginStyles = StyleSheet.create({
   //   textAlign: "center"
   // }
   socialContainer: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    left: 8
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    left: 8,
   },
   socialButton: {
     width: 151,
     height: 48,
-    backgroundColor: "#36589E",
-    borderRadius: 6
+    backgroundColor: '#36589E',
+    borderRadius: 6,
   },
   socialText: {
-    color: "#ffffff",
-    fontFamily: "Nunito-Regular"
-  }
+    color: '#ffffff',
+    fontFamily: 'Nunito-Regular',
+  },
 });
