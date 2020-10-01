@@ -4,7 +4,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Login from '../screen/other/Login';
 import FirstApp from '../screen/other/firstApp';
 import HomeRoute from './homeStack';
-import ForgotPassword from '../screen/app/ForgotPassword';
+import ForgotPassword from '../screen/other/ForgotPassword';
+import Register from '../screen/other/Register';
 import 'react-native-gesture-handler';
 
 const ScreenStack = createStackNavigator();
@@ -30,6 +31,11 @@ const FirstStack = () => {
           options={{headerShown: null}}
           name="ForgotPassword"
           component={ForgotPassword}
+        />
+        <ScreenStack.Screen
+          options={{headerShown: null}}
+          name="Register"
+          component={Register}
         />
       </ScreenStack.Navigator>
     </NavigationContainer>

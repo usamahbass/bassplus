@@ -13,17 +13,15 @@ import EyePassword from 'react-native-vector-icons/Ionicons';
 import CustomButton from '../../components/customButton';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export default function Login({navigation}) {
+const Register = ({navigation}) => {
   const [show, setShow] = React.useState(true);
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-      <View style={LoginStyles.container}>
+      <View style={[LoginStyles.container, {justifyContent: 'center'}]}>
         <Image
           source={require('../../assets/image/logo.png')}
           style={LoginStyles.logo}
         />
-        <Text style={LoginStyles.title}>Welcome back!</Text>
-
         <View>
           <Text style={LoginStyles.label}>Email</Text>
           <TextInput
@@ -32,7 +30,6 @@ export default function Login({navigation}) {
             placeholder="Enter your email..."
           />
         </View>
-
         <View>
           <Text style={LoginStyles.label}>Password</Text>
           <TextInput
@@ -51,31 +48,24 @@ export default function Login({navigation}) {
             />
           </TouchableOpacity>
         </View>
-
         <CustomButton
           onPress={() => navigation.navigate('Home')}
           buttonStyle={LoginStyles.button}
           buttonText={LoginStyles.buttonText}>
-          Login
+          Register
         </CustomButton>
-
         <View style={LoginStyles.wrapRegisterAndForgotPassword}>
           <View>
             <Text
-              onPress={() => navigation.navigate('Register')}
+              onPress={() => navigation.navigate('Login')}
               style={LoginStyles.register}>
-              Not Registered ?
-            </Text>
-          </View>
-          <View>
-            <Text
-              onPress={() => navigation.navigate('ForgotPassword')}
-              style={LoginStyles.forgotPassword}>
-              Forgot password ?
+              Already Registered ? Login
             </Text>
           </View>
         </View>
       </View>
     </TouchableWithoutFeedback>
   );
-}
+};
+
+export default Register;
