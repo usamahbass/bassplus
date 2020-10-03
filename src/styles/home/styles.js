@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create ({
   container: {
     flex: 1,
-    backgroundColor: '#E5E5E5',
+    backgroundColor: 'rgba(255,255,255,0.8)',
   },
   box: {
     flexDirection: 'row',
@@ -21,7 +21,6 @@ export const styles = StyleSheet.create ({
   },
   bag: {
     marginRight: 15,
-    backgroundColor: '#ffffff',
     height: 30,
     width: 25,
     alignItems: 'flex-end',
@@ -32,7 +31,8 @@ export const styles = StyleSheet.create ({
     fontWeight: 'bold',
   },
   today: {
-    fontWeight: '600',
+    color : 'rgba(0,0,0,0.4)',
+    fontFamily : 'Nunito'
   },
   notifikasi: {
     height: 15,
@@ -81,7 +81,7 @@ export const styles = StyleSheet.create ({
   help: {
     marginLeft: 19,
     marginTop: 43,
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: '700',
   },
   boxHelp: {
@@ -107,4 +107,18 @@ export const styles = StyleSheet.create ({
     },
     elevation: 4,
   },
+  tWidget : {
+      fontSize : 12
+  },
+  boxTitle : {
+      flexDirection : 'row',
+      alignItems : 'center',
+      justifyContent : 'space-between',
+  },
+  see : {
+      textAlign : 'center',
+      marginTop : 10,
+      marginRight : 20,
+      color : '#384DFE'
+  }
 });
