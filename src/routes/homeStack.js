@@ -19,7 +19,7 @@ const HomeRoute = () => {
           flex: 0.5,
         },
         style: {
-          height: 70,
+          height: 50,
         },
       }}>
       <HomeStack.Screen

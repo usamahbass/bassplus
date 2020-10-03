@@ -26,7 +26,7 @@ const FirstStack = () => {
             headerShown: false,
           }}
         />
-        <ScreenStack.Screen name="Home" component={HomeRoute} />
+        <ScreenStack.Screen name="Home" component={HomeRoute} options={{headerShown: false}} />
         <ScreenStack.Screen
           options={{
             headerTitleStyle: {display: 'none'},
