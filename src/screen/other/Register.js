@@ -23,15 +23,18 @@ const Register = ({navigation}) => {
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={[LoginStyles.container, {justifyContent: 'flex-start'}]}>
-        <View>
+        <View style={{width: wp('80%')}}>
           <Text style={styles.headerTitle}>Register</Text>
-          <Text
-            style={styles.headerDesc}
-            onPress={() => {
-              navigation.navigate('Login');
-            }}>
-            Already have an account? Login
-          </Text>
+          <View style={styles.headerDescView}>
+            <Text style={styles.headerDesc}>Already have an account? </Text>
+            <Text
+              style={[styles.headerDesc, styles.headerDescLink]}
+              onPress={() => {
+                navigation.navigate('Login');
+              }}>
+              Login
+            </Text>
+          </View>
         </View>
         <View>
           <Text style={LoginStyles.label}>Email</Text>
@@ -98,6 +101,12 @@ const styles = StyleSheet.create({
     fontFamily: 'Nunito-Regular',
     fontSize: hp('2%'),
     color: '#B0B0B0',
-    width: wp('80%'),
+  },
+  headerDescView: {
+    flexDirection: 'row',
+  },
+  headerDescLink: {
+    fontWeight: 'bold',
+    color: '#384DFE',
   },
 });
