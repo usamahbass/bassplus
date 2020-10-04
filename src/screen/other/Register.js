@@ -7,27 +7,48 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   TouchableOpacity,
+  StyleSheet,
 } from 'react-native';
 import {LoginStyles} from '../../styles/login/styles';
 import EyePassword from 'react-native-vector-icons/Ionicons';
 import CustomButton from '../../components/customButton';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
+import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 
 const Register = ({navigation}) => {
   const [show, setShow] = React.useState(true);
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-      <View style={[LoginStyles.container, {justifyContent: 'center'}]}>
-        <Image
-          source={require('../../assets/image/logo.png')}
-          style={LoginStyles.logo}
-        />
+      <View style={[LoginStyles.container, {justifyContent: 'flex-start'}]}>
+        <View>
+          <Text style={styles.headerTitle}>Register</Text>
+          <Pressable
+            onPress={() => {
+              navigation.navigate('Login');
+            }}>
+            <Text style={styles.headerDesc}>
+              Already have an account? Login
+            </Text>
+          </Pressable>
+        </View>
         <View>
           <Text style={LoginStyles.label}>Email</Text>
           <TextInput
             style={LoginStyles.input}
             keyboardType="email-address"
             placeholder="Enter your email..."
+          />
+        </View>
+        <View>
+          <Text style={LoginStyles.label}>Mobile Number</Text>
+          <TextInput
+            style={LoginStyles.input}
+            keyboardType="phone-pad"
+            placeholder="8123-456-7890"
           />
         </View>
         <View>
@@ -52,7 +73,7 @@ const Register = ({navigation}) => {
           onPress={() => navigation.navigate('Home')}
           buttonStyle={LoginStyles.button}
           buttonText={LoginStyles.buttonText}>
-          Register
+          Sign Up
         </CustomButton>
         <View style={LoginStyles.wrapRegisterAndForgotPassword}>
           <View>
@@ -69,3 +90,16 @@ const Register = ({navigation}) => {
 };
 
 export default Register;
+const styles = StyleSheet.create({
+  headerTitle: {
+    marginBottom: 13,
+    fontFamily: 'Nunito-Bold',
+    fontSize: hp('3%'),
+  },
+  headerDesc: {
+    fontFamily: 'Nunito-Regular',
+    fontSize: hp('2%'),
+    color: '#B0B0B0',
+    width: wp('80%'),
+  },
+});
