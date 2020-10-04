@@ -17,7 +17,6 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 
 const Register = ({navigation}) => {
   const [show, setShow] = React.useState(true);
@@ -26,14 +25,13 @@ const Register = ({navigation}) => {
       <View style={[LoginStyles.container, {justifyContent: 'flex-start'}]}>
         <View>
           <Text style={styles.headerTitle}>Register</Text>
-          <Pressable
+          <Text
+            style={styles.headerDesc}
             onPress={() => {
               navigation.navigate('Login');
             }}>
-            <Text style={styles.headerDesc}>
-              Already have an account? Login
-            </Text>
-          </Pressable>
+            Already have an account? Login
+          </Text>
         </View>
         <View>
           <Text style={LoginStyles.label}>Email</Text>
