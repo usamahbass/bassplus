@@ -7,6 +7,7 @@ import History from '../screen/app/History';
 import Home from '../screen/app/Home';
 import Review from '../screen/app/Review';
 import Chats from  '../screen/pages/chats';
+import Schedule from '../screen/pages/schedule'
 import 'react-native-gesture-handler';
 
 const HomeTab = createBottomTabNavigator ();
@@ -87,6 +88,7 @@ const HomeStackRoot = () => {
     <HomeStack.Navigator>
       <HomeStack.Screen name="HomeTab" component={HomeTabRoute} options={{headerShown: false}}/>
       <HomeStack.Screen name="Chats" component={Chats} options={{headerShown: false}} />
+      <HomeStack.Screen name="Schedule" component={Schedule} options={{headerShown: false}} />
     </HomeStack.Navigator>
   );
 };
