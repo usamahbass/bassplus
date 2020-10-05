@@ -7,27 +7,49 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   TouchableOpacity,
+  StyleSheet,
 } from 'react-native';
 import {LoginStyles} from '../../styles/login/styles';
 import EyePassword from 'react-native-vector-icons/Ionicons';
 import CustomButton from '../../components/customButton';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 
 const Register = ({navigation}) => {
   const [show, setShow] = React.useState(true);
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-      <View style={[LoginStyles.container, {justifyContent: 'center'}]}>
-        <Image
-          source={require('../../assets/image/logo.png')}
-          style={LoginStyles.logo}
-        />
+      <View style={[LoginStyles.container, {justifyContent: 'flex-start'}]}>
+        <View style={{width: wp('80%')}}>
+          <Text style={styles.headerTitle}>Register</Text>
+          <View style={styles.flexRow}>
+            <Text style={styles.headerDesc}>Already have an account? </Text>
+            <Text
+              style={[styles.headerDesc, styles.headerDescLink]}
+              onPress={() => {
+                navigation.navigate('Login');
+              }}>
+              Login
+            </Text>
+          </View>
+        </View>
         <View>
           <Text style={LoginStyles.label}>Email</Text>
           <TextInput
             style={LoginStyles.input}
             keyboardType="email-address"
             placeholder="Enter your email..."
+          />
+        </View>
+        <View>
+          <Text style={LoginStyles.label}>Mobile Number</Text>
+          <TextInput
+            style={LoginStyles.input}
+            keyboardType="phone-pad"
+            placeholder="8123-456-7890"
           />
         </View>
         <View>
@@ -49,19 +71,39 @@ const Register = ({navigation}) => {
           </TouchableOpacity>
         </View>
         <CustomButton
-          onPress={() => navigation.navigate('Home')}
+          onPress={() => navigation.navigate('Login')}
           buttonStyle={LoginStyles.button}
           buttonText={LoginStyles.buttonText}>
-          Register
+          Sign Up
         </CustomButton>
-        <View style={LoginStyles.wrapRegisterAndForgotPassword}>
-          <View>
+        <View>
+          <View style={styles.loginSocialContainer}>
+            <View style={styles.loginSocialLine} />
             <Text
-              onPress={() => navigation.navigate('Login')}
-              style={LoginStyles.register}>
-              Already Registered ? Login
+              style={styles.loginSocialText}
+              onPress={() => navigation.navigate('Login')}>
+              Log in with social account
             </Text>
+            <View style={styles.loginSocialLine} />
           </View>
+          <View style={styles.flexRow}>
+            <View style={{flex: 1, marginRight: 8}}>
+              <Icon.Button name="facebook" backgroundColor="#3b5998">
+                Facebook
+              </Icon.Button>
+            </View>
+            <View style={{flex: 1}}>
+              <Icon.Button name="google" backgroundColor="#EB4132">
+                Google
+              </Icon.Button>
+            </View>
+          </View>
+        </View>
+        <View style={styles.termContainer}>
+          <Text style={styles.termText}>
+            By clicking sign up you are agreeing to the Term of use and the
+            Privacy policy
+          </Text>
         </View>
       </View>
     </TouchableWithoutFeedback>
@@ -69,3 +111,47 @@ const Register = ({navigation}) => {
 };
 
 export default Register;
+const styles = StyleSheet.create({
+  headerTitle: {
+    marginBottom: 13,
+    fontFamily: 'Nunito-Bold',
+    fontSize: hp('3%'),
+  },
+  headerDesc: {
+    fontFamily: 'Nunito-Regular',
+    fontSize: hp('2%'),
+    color: '#B0B0B0',
+  },
+  flexRow: {
+    flexDirection: 'row',
+  },
+  headerDescLink: {
+    fontWeight: 'bold',
+    color: '#384DFE',
+  },
+  loginSocialText: {
+    fontFamily: 'Nunito-Regular',
+    color: '#B0B0B0',
+    flex: 3,
+    textAlign: 'center',
+    fontWeight: '600',
+  },
+  loginSocialLine: {flex: 1, height: 1, backgroundColor: '#B0B0B0'},
+  loginSocialContainer: {
+    marginTop: 50,
+    marginBottom: 20,
+    width: wp('90%'),
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  termContainer: {
+    marginVertical: 30,
+    width: wp('80%'),
+  },
+  termText: {
+    fontFamily: 'Nunito-Regular',
+    color: '#B0B0B0',
+    textAlign: 'center',
+  },
+});
