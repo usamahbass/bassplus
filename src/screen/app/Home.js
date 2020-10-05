@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import {styles} from '../../styles/home/styles';
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="#E5E5E5" />
@@ -49,13 +49,13 @@ const Home = () => {
       <Text style={styles.help}>How can we help you?</Text>
       <View style={styles.boxHelp}>
         <ScrollView horizontal={true}>
-        <View style={styles.boxBidget}>
+        <TouchableOpacity onPress = { () => navigation.navigate('Chats')} style={styles.boxBidget}>
             <Image
               source={{uri: 'https://i.ibb.co/ZVFKgwF/icon-chat-32x32.png'}}
               style={[styles.iconSearch,{height : 30, width : 30}]}
             />
             <Text style={styles.tWidget}>Chat a free</Text>
-          </View>
+          </TouchableOpacity>
           <View style={styles.boxBidget}>
             <Image
               source={{uri: 'https://i.ibb.co/LrZrLb3/icon-chat-32x32-copy.png'}}
