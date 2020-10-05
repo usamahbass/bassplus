@@ -173,5 +173,32 @@ export const styles = StyleSheet.create ({
     backgroundColor : '#384DFE',
     marginRight : 5,
     borderRadius : 5
-  }
+  },
+
+  // search schedulu
+  boxSearch: {
+    height: 48,
+    width: '90%',
+    alignSelf: 'center',
+    marginTop: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#ffffff',
+    borderRadius: 10,
+    // bayangan
+    shadowColor: 'black',
+    shadowOpacity: 8,
+    shadowOffset: {
+      height: 2,
+      width: -2,
+    },
+    elevation: 4,
+  },
+  iconSearch: {
+    height: 20,
+    width: 20,
+    marginRight: 5,
+    marginRight: 5,
+  },
 });
