@@ -36,7 +36,10 @@ const FirstStack = () => {
           component={ForgotPassword}
         />
         <ScreenStack.Screen
-          options={{headerShown: null}}
+          options={{
+            headerTitleStyle: {display: 'none'},
+            headerStyle: {elevation: 0, backgroundColor: '#FCFCFC'},
+          }}
           name="Register"
           component={Register}
         />
