@@ -1,17 +1,20 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createStackNavigator} from '@react-navigation/stack';
 import IconBottom from '../components/icons/iconBottom';
 import Feed from '../screen/app/Feed';
 import History from '../screen/app/History';
 import Home from '../screen/app/Home';
 import Review from '../screen/app/Review';
+import Chats from  '../screen/pages/chats';
 import 'react-native-gesture-handler';
 
-const HomeStack = createBottomTabNavigator();
+const HomeTab = createBottomTabNavigator ();
+const HomeStack = createStackNavigator ();
 
-const HomeRoute = () => {
+const HomeTabRoute = () => {
   return (
-    <HomeStack.Navigator
+    <HomeTab.Navigator
       tabBarOptions={{
         activeTintColor: '#384DFE',
         labelStyle: {
@@ -21,61 +24,71 @@ const HomeRoute = () => {
         style: {
           height: 50,
         },
-      }}>
-      <HomeStack.Screen
+      }}
+    >
+      <HomeTab.Screen
         name="Home"
         component={Home}
         options={{
           title: 'Home',
-          tabBarIcon: (props) => (
+          tabBarIcon: props => (
             <IconBottom
               data={props}
-              image={require('../assets/image/home.png')}
+              image={require ('../assets/image/home.png')}
             />
           ),
         }}
       />
-      <HomeStack.Screen
+      <HomeTab.Screen
         name="History"
         component={History}
         options={{
           title: 'History',
-          tabBarIcon: (props) => (
+          tabBarIcon: props => (
             <IconBottom
               data={props}
-              image={require('../assets/image/history.png')}
+              image={require ('../assets/image/history.png')}
             />
           ),
         }}
       />
-      <HomeStack.Screen
+      <HomeTab.Screen
         name="Feed"
         component={Feed}
         options={{
           title: 'Feed',
-          tabBarIcon: (props) => (
+          tabBarIcon: props => (
             <IconBottom
               data={props}
-              image={require('../assets/image/feed.png')}
+              image={require ('../assets/image/feed.png')}
             />
           ),
         }}
       />
-      <HomeStack.Screen
+      <HomeTab.Screen
         name="Review"
         component={Review}
         options={{
           title: 'Review',
-          tabBarIcon: (props) => (
+          tabBarIcon: props => (
             <IconBottom
               data={props}
-              image={require('../assets/image/review.png')}
+              image={require ('../assets/image/review.png')}
             />
           ),
         }}
       />
+    </HomeTab.Navigator>
+  );
+};
+
+const HomeStackRoot = () => {
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen name="HomeTab" component={HomeTabRoute} options={{headerShown: false}}/>
+      <HomeStack.Screen name="Chats" component={Chats} options={{headerShown: false}} />
     </HomeStack.Navigator>
   );
 };
 
-export default HomeRoute;
+export default HomeStackRoot;
