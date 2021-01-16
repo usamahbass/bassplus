@@ -1,124 +1,170 @@
 import {StyleSheet} from 'react-native';
 
-export const styles = StyleSheet.create ({
+export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'rgba(255,255,255,0.8)',
+    backgroundColor: '#FCFCFC',
   },
-  box: {
+  header: {
+    padding: 15,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginLeft: 10,
-    marginRight: 10,
-    marginTop: 5,
     alignItems: 'center',
+  },
+  imageUser: {
+    width: 35,
+    height: 35,
+    marginRight: 12,
   },
   user: {
-    height: 50,
     flexDirection: 'row',
     alignItems: 'center',
-    marginLeft: 20,
   },
-  bag: {
-    marginRight: 15,
-    height: 30,
-    width: 25,
-    alignItems: 'flex-end',
-    borderRadius: 5,
+  userName: {
+    fontSize: 18,
+    fontFamily: 'Nunito-Bold',
   },
-  hi: {
-    fontSize: 15,
-    fontWeight: 'bold',
+  userHelp: {
+    color: '#B0B0B0',
+    fontFamily: 'Nunito-Regular',
   },
-  today: {
-    color : 'rgba(0,0,0,0.4)',
-    fontFamily : 'Nunito'
-  },
-  notifikasi: {
-    height: 15,
-    width: 15,
+  notification: {
+    width: 40,
+    height: 40,
     position: 'absolute',
-    right: 7,
-    top: 10,
+    right: 0,
+    bottom: 5,
+    backgroundColor: '#fff',
   },
-  boxCount: {
-    height: 15,
-    width: 15,
+  notificationBox: {
+    position: 'absolute',
+    right: 10,
+    top: -10,
+    height: 18,
+    width: 18,
     backgroundColor: '#FF685C',
     borderRadius: 20,
   },
-  count: {
-    fontSize: 10,
+  notificationCount: {
+    fontSize: 12,
     textAlign: 'center',
     textAlignVertical: 'center',
     color: '#fff',
   },
   boxSearch: {
-    height: 48,
-    width: '90%',
-    alignSelf: 'center',
-    marginTop: 10,
     flexDirection: 'row',
-    alignItems: 'center',
+    position: 'relative',
+    left: 12,
+    marginTop: 20,
     justifyContent: 'center',
-    backgroundColor: '#ffffff',
-    borderRadius: 10,
-    // bayangan
-    shadowColor: 'black',
-    shadowOpacity: 8,
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    shadowColor: '#000',
+    width: 333,
+    height: 48,
+    borderRadius: 6,
     shadowOffset: {
-      height: 2,
-      width: -2,
+      width: 0,
+      height: 1,
     },
-    elevation: 4,
+    shadowOpacity: 0.18,
+    shadowRadius: 1.0,
+    elevation: 1,
   },
-  iconSearch: {
-    height: 20,
-    width: 20,
-    marginRight: 5,
-    marginRight: 5,
+  searchImage: {
+    position: 'absolute',
+    left: 10,
   },
-  help: {
-    marginLeft: 19,
-    marginTop: 43,
-    fontSize: 15,
-    fontWeight: '700',
+  inputSearch: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '75%',
+  },
+  settings: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    right: 5,
+    backgroundColor: '#384DFE',
+    width: 38,
+    height: 38,
+    borderRadius: 5,
   },
   boxHelp: {
-    marginLeft: 15,
-    marginRight: 15,
-    flexDirection: 'row',
-    height: 120,
-  },
-  boxBidget: {
-    height: 100,
-    width: 100,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    marginTop: 43,
+    flexDirection: 'column',
     justifyContent: 'center',
-    margin: 5,
-    borderRadius : 10,
-    // bayangan
-    shadowColor: 'black',
-    shadowOpacity: 8,
-    shadowOffset: {
-      height: 2,
-      width: -2,
-    },
-    elevation: 4,
   },
-  tWidget : {
-      fontSize : 12
+  title: {
+    fontSize: 18,
+    fontFamily: 'Nunito-Bold',
+    position: 'absolute',
+    top: 0,
+    left: 15,
   },
-  boxTitle : {
-      flexDirection : 'row',
-      alignItems : 'center',
-      justifyContent : 'space-between',
+  containerHelp: {
+    marginTop: 50,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
   },
-  see : {
-      textAlign : 'center',
-      marginTop : 10,
-      marginRight : 20,
-      color : '#384DFE'
-  }
+  boxImage: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 100,
+    height: 100,
+    backgroundColor: '#fff',
+    borderRadius: 12,
+    shadowColor: '#fff',
+    shadowOpacity: 0.7,
+  },
+  boxText: {
+    fontSize: 14,
+    marginTop: 15.47,
+    fontFamily: 'Nunito-Bold',
+  },
+  boxSpace: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  link: {
+    color: '#384DFE',
+    fontSize: 14,
+    fontFamily: 'Nunito-Regular',
+    position: 'absolute',
+    right: 15,
+    top: 3,
+  },
+  containerCategories: {
+    marginTop: 50,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  boxCategoriesLeft: {
+    width: 163,
+    height: 163,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#384DFE',
+    borderRadius: 12,
+  },
+  boxCategoriesRight: {
+    width: 163,
+    height: 163,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FF685C',
+    borderRadius: 12,
+  },
+  boxTextWhite: {
+    fontSize: 14,
+    marginTop: 15.47,
+    fontFamily: 'Nunito-Bold',
+    lineHeight: 19.1,
+    color: '#fff',
+  },
 });

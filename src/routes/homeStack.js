@@ -21,9 +21,12 @@ const HomeTabRoute = () => {
         labelStyle: {
           fontSize: 12,
           flex: 0.5,
+          position: "relative",
+          bottom: 5,
+          fontFamily: "Nunito-Regular"
         },
         style: {
-          height: 50,
+          height: 60,
         },
       }}
     >
@@ -61,6 +64,7 @@ const HomeTabRoute = () => {
           tabBarIcon: props => (
             <IconBottom
               data={props}
+              
               image={require ('../assets/image/feed.png')}
             />
           ),

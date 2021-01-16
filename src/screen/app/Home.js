@@ -1,115 +1,110 @@
 import React from 'react';
 import {
-  Text,
   View,
   StatusBar,
   Image,
-  TextInput,
-  ScrollView,
   TouchableOpacity,
+  Text,
+  ScrollView,
 } from 'react-native';
+import {TextInput} from 'react-native-gesture-handler';
+import {MyText} from '../../components';
 import {styles} from '../../styles/home/styles';
 
 const Home = ({navigation}) => {
   return (
-    <View style={styles.container}>
-      <StatusBar backgroundColor="#E5E5E5" />
-      <View style={styles.box}>
-        <View style={styles.user}>
-          <Image
-            source={{uri: 'https://i.ibb.co/LP0RGNG/man.png'}}
-            style={{height: 30, width: 30, borderRadius: 20, marginRight: 5}}
-          />
-          <View>
-            <Text style={styles.hi}>Hi Ainara,</Text>
-            <Text style={styles.today}>How're you today?</Text>
-          </View>
-        </View>
-        <View style={styles.bag}>
-          <Image
-            source={{uri: 'https://i.ibb.co/9bxn04q/notification.png'}}
-            style={styles.notifikasi}
-          />
-          <View style={styles.boxCount}>
-            <Text style={styles.count}>4</Text>
-          </View>
-        </View>
-      </View>
-      <View style={styles.boxSearch}>
-        <Image
-          source={{uri: 'https://i.ibb.co/SXsN9Y3/loupe.png'}}
-          style={styles.iconSearch}
-        />
-        <TextInput placeholder="Search health issue, doctor, topic…" />
-        <Image
-          source={{uri: 'https://i.ibb.co/n3vy9hQ/Group-2.png'}}
-          style={[styles.iconSearch, {height: 60, width: 60}]}
-        />
-      </View>
-      <Text style={styles.help}>How can we help you?</Text>
-      <View style={styles.boxHelp}>
-        <ScrollView horizontal={true}>
-        <TouchableOpacity onPress = { () => navigation.navigate('Chats')} style={styles.boxBidget}>
+    <ScrollView>
+      <View style={styles.container}>
+        <StatusBar backgroundColor="#E5E5E5" />
+
+        {/* Header */}
+
+        <View style={styles.header}>
+          <View style={styles.user}>
             <Image
-              source={{uri: 'https://i.ibb.co/ZVFKgwF/icon-chat-32x32.png'}}
-              style={[styles.iconSearch,{height : 30, width : 30}]}
+              source={{uri: 'https://i.ibb.co/LP0RGNG/man.png'}}
+              style={styles.imageUser}
             />
-            <Text style={styles.tWidget}>Chat a free</Text>
+            <View>
+              <Text style={styles.userName}>Hi Ainara</Text>
+              <Text style={styles.userHelp}>How're you today</Text>
+            </View>
+          </View>
+
+          <TouchableOpacity style={styles.notification}>
+            <Image source={require('../../assets/image/notification.png')} />
+            <View style={styles.notificationBox}>
+              <MyText style={styles.notificationCount} text="4" />
+            </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={ () => navigation.navigate('Schedule')} style={styles.boxBidget}>
-            <Image
-              source={{uri: 'https://i.ibb.co/LrZrLb3/icon-chat-32x32-copy.png'}}
-              style={[styles.iconSearch,{height : 30, width : 30}]}
-            />
-            <Text style={styles.tWidget}>Schedule</Text>
+        </View>
+
+        {/* Main */}
+
+        {/* search */}
+
+        <View style={styles.boxSearch}>
+          <Image
+            style={styles.searchImage}
+            source={require('../../assets/image/search.png')}
+          />
+          <TextInput
+            placeholder="Search health issue, doctor, topic…"
+            placeholderTextColor="#B0B0B0"
+            style={styles.inputSearch}
+          />
+          <TouchableOpacity style={styles.settings}>
+            <Image source={require('../../assets/image/settings.png')} />
           </TouchableOpacity>
-          <View style={styles.boxBidget}>
-            <Image
-              source={{uri: 'https://i.ibb.co/pz64Zgg/icon-chat-32x32-copy-2.png'}}
-              style={[styles.iconSearch,{height : 30, width : 30}]}
-            />
-            <Text style={styles.tWidget}>Buy Medicine </Text>
-          </View>
-          <View style={styles.boxBidget}>
-            <Image
-              source={{uri: 'https://i.ibb.co/pz64Zgg/icon-chat-32x32-copy-2.png'}}
-              style={styles.iconSearch}
-            />
-            <Text style={styles.tWidget}>Chat a free</Text>
-          </View>
-        </ScrollView>
-      </View>
-      <View style={styles.boxTitle}>
-        <Text style={[styles.help, {marginTop: 10}]}>Popular Categories</Text>
-        <Text style={styles.see}>See All</Text>
-      </View>
-      <View style={[styles.boxHelp, {marginRight: 35}]}>
-        <View
-          style={[
-            styles.boxBidget,
-            {width: '50%', height: 160, backgroundColor: '#384DFE'},
-          ]}
-        >
-          <Image
-            source={{uri: 'https://i.ibb.co/HFpfFzL/icon-heart-48x48.png'}}
-            style={[styles.iconSearch, {height: 70, width: 70}]}
-          />
-          <Text style={[styles.tWidget, {color: '#fff'}]}>Cardiology</Text>
         </View>
-        <View
-          style={[
-            styles.boxBidget,
-            {width: '50%', height: 160, backgroundColor: '#FF685C'},
-          ]}
-        >
-          <Image
-            source={{uri: 'https://i.ibb.co/GHvx2jJ/icon-heart-48x48-copy.png'}}
-            style={[styles.iconSearch, {height: 70, width: 70}]}
-          />
-          <Text style={[styles.tWidget, {color: '#fff'}]}>Pulmonology</Text>
+
+        <View style={styles.boxHelp}>
+          <Text style={styles.title}>How can we help you ?</Text>
+
+          <View style={styles.containerHelp}>
+            <TouchableOpacity style={styles.boxImage}>
+              <Image source={require('../../assets/image/medical.png')} />
+              <Text style={styles.boxText}>Chat a free</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.boxImage}>
+              <Image source={require('../../assets/image/chat.png')} />
+              <Text style={styles.boxText}>Schedule</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.boxImage}>
+              <Image source={require('../../assets/image/schedule.png')} />
+              <Text style={styles.boxText}>Buy Medicine</Text>
+            </TouchableOpacity>
+          </View>
         </View>
+
+        <View style={styles.boxHelp}>
+          <View style={styles.boxSpace}>
+            <View>
+              <Text style={styles.title}>Popular Categories</Text>
+            </View>
+            <View>
+              <Text style={styles.link}>See all</Text>
+            </View>
+          </View>
+
+          <View style={styles.containerCategories}>
+            <TouchableOpacity style={styles.boxCategoriesLeft}>
+              <Image source={require('../../assets/image/heart.png')} />
+              <Text style={styles.boxTextWhite}>Cardiology</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.boxCategoriesRight}>
+              <Image source={require('../../assets/image/pulmonology.png')} />
+              <Text style={styles.boxTextWhite}>Pulmonology</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        {/* End Main */}
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
