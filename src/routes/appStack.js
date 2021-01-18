@@ -26,11 +26,16 @@ const FirstStack = () => {
             headerShown: false,
           }}
         />
-        <ScreenStack.Screen name="Home" component={HomeRoute} options={{headerShown: false}} />
+        <ScreenStack.Screen
+          name="Home"
+          component={HomeRoute}
+          options={{headerShown: false}}
+        />
         <ScreenStack.Screen
           options={{
             headerTitleStyle: {display: 'none'},
             headerStyle: {elevation: 0},
+            headerTintColor: "#D0C9D6"
           }}
           name="ForgotPassword"
           component={ForgotPassword}

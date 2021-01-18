@@ -87,13 +87,42 @@ const Register = ({navigation}) => {
             <View style={styles.loginSocialLine} />
           </View>
           <View style={styles.flexRow}>
-            <View style={{flex: 1, marginRight: 8}}>
-              <Icon.Button name="facebook" backgroundColor="#3b5998">
+            <View
+              style={{
+                flexDirection: 'row',
+                flex: 1,
+                marginRight: 8,
+                justifyContent: 'center',
+              }}>
+              <Icon.Button
+                style={{
+                  width: wp('40%'),
+                  height: hp('7%'),
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                }}
+                name="facebook"
+                backgroundColor="#3b5998">
                 Facebook
               </Icon.Button>
             </View>
-            <View style={{flex: 1}}>
-              <Icon.Button name="google" backgroundColor="#EB4132">
+            <View
+              style={{
+                flexDirection: 'row',
+                flex: 1,
+                marginRight: 8,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <Icon.Button
+                style={{
+                  width: wp('40%'),
+                  height: hp('7%'),
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                }}
+                name="google"
+                backgroundColor="#EB4132">
                 Google
               </Icon.Button>
             </View>

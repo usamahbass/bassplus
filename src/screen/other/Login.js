@@ -60,19 +60,33 @@ export default function Login({navigation}) {
         </CustomButton>
 
         <View style={LoginStyles.wrapRegisterAndForgotPassword}>
-          <View>
-            <Text
-              onPress={() => navigation.navigate('Register')}
-              style={LoginStyles.register}>
-              Not Registered ?
-            </Text>
+          <Text
+            onPress={() => navigation.navigate('ForgotPassword')}
+            style={LoginStyles.forgotPassword}>
+            Forget Password ?
+          </Text>
+        </View>
+
+        <View style={LoginStyles.socialStyles}>
+          <Text style={LoginStyles.textSocial}>Log in with social account</Text>
+
+          <View style={LoginStyles.boxSocial}>
+            <TouchableOpacity style={LoginStyles.facebookButton}>
+              <Image style={LoginStyles.socialIcon} source={require('../../assets/image/facebook-logo.png')} />
+              <Text style={LoginStyles.socialsText}>Facebook</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={LoginStyles.googleButton}>
+              <Image style={LoginStyles.socialIcon} source={require('../../assets/image/google.png')} />
+              <Text style={LoginStyles.socialsText}>Google</Text>
+            </TouchableOpacity>
           </View>
-          <View>
-            <Text
-              onPress={() => navigation.navigate('ForgotPassword')}
-              style={LoginStyles.forgotPassword}>
-              Forgot password ?
-            </Text>
+
+          <View style={LoginStyles.wrapSignUp}>
+            <Text style={LoginStyles.wrapSignUpLeft} >Don’t have an account?</Text>
+            <TouchableOpacity onPress={() => navigation.navigate("Register")} >
+              <Text style={LoginStyles.wrapSignUpRight} >Sign Up</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>

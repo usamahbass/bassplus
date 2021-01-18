@@ -6,12 +6,12 @@ import Feed from '../screen/app/Feed';
 import History from '../screen/app/History';
 import Home from '../screen/app/Home';
 import Review from '../screen/app/Review';
-import Chats from  '../screen/pages/chats';
-import Schedule from '../screen/pages/schedule'
+import Chats from '../screen/pages/chats';
+import Schedule from '../screen/pages/schedule';
 import 'react-native-gesture-handler';
 
-const HomeTab = createBottomTabNavigator ();
-const HomeStack = createStackNavigator ();
+const HomeTab = createBottomTabNavigator();
+const HomeStack = createStackNavigator();
 
 const HomeTabRoute = () => {
   return (
@@ -21,24 +21,23 @@ const HomeTabRoute = () => {
         labelStyle: {
           fontSize: 12,
           flex: 0.5,
-          position: "relative",
+          position: 'relative',
           bottom: 5,
-          fontFamily: "Nunito-Regular"
+          fontFamily: 'Nunito-Regular',
         },
         style: {
           height: 60,
         },
-      }}
-    >
+      }}>
       <HomeTab.Screen
         name="Home"
         component={Home}
         options={{
           title: 'Home',
-          tabBarIcon: props => (
+          tabBarIcon: (props) => (
             <IconBottom
               data={props}
-              image={require ('../assets/image/home.png')}
+              image={require('../assets/image/home.png')}
             />
           ),
         }}
@@ -48,10 +47,10 @@ const HomeTabRoute = () => {
         component={History}
         options={{
           title: 'History',
-          tabBarIcon: props => (
+          tabBarIcon: (props) => (
             <IconBottom
               data={props}
-              image={require ('../assets/image/history.png')}
+              image={require('../assets/image/history.png')}
             />
           ),
         }}
@@ -61,11 +60,10 @@ const HomeTabRoute = () => {
         component={Feed}
         options={{
           title: 'Feed',
-          tabBarIcon: props => (
+          tabBarIcon: (props) => (
             <IconBottom
               data={props}
-              
-              image={require ('../assets/image/feed.png')}
+              image={require('../assets/image/feed.png')}
             />
           ),
         }}
@@ -75,10 +73,10 @@ const HomeTabRoute = () => {
         component={Review}
         options={{
           title: 'Review',
-          tabBarIcon: props => (
+          tabBarIcon: (props) => (
             <IconBottom
               data={props}
-              image={require ('../assets/image/review.png')}
+              image={require('../assets/image/review.png')}
             />
           ),
         }}
@@ -90,9 +88,21 @@ const HomeTabRoute = () => {
 const HomeStackRoot = () => {
   return (
     <HomeStack.Navigator>
-      <HomeStack.Screen name="HomeTab" component={HomeTabRoute} options={{headerShown: false}}/>
-      <HomeStack.Screen name="Chats" component={Chats} options={{headerShown: false}} />
-      <HomeStack.Screen name="Schedule" component={Schedule} options={{headerShown: false}} />
+      <HomeStack.Screen
+        name="HomeTab"
+        component={HomeTabRoute}
+        options={{headerShown: false}}
+      />
+      <HomeStack.Screen
+        name="Chats"
+        component={Chats}
+        options={{headerShown: false}}
+      />
+      <HomeStack.Screen
+        name="Schedule"
+        component={Schedule}
+        options={{headerShown: false}}
+      />
     </HomeStack.Navigator>
   );
 };
