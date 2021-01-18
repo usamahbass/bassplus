@@ -31,6 +31,7 @@ export const styles = StyleSheet.create ({
     fontSize: 15,
     marginLeft: 24,
     color: 'rgba(0,0,0,0.2)',
+    fontFamily: 'Nunito-Regular'
   },
   boxUser: {
     flexDirection: 'row',

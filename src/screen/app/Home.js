@@ -62,12 +62,12 @@ const Home = ({navigation}) => {
           <Text style={styles.title}>How can we help you ?</Text>
 
           <View style={styles.containerHelp}>
-            <TouchableOpacity style={styles.boxImage}>
+            <TouchableOpacity onPress={() => navigation.navigate("Chats")} style={styles.boxImage}>
               <Image source={require('../../assets/image/medical.png')} />
               <Text style={styles.boxText}>Chat a free</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.boxImage}>
+            <TouchableOpacity onPress={() => navigation.navigate("Schedule")} style={styles.boxImage}>
               <Image source={require('../../assets/image/chat.png')} />
               <Text style={styles.boxText}>Schedule</Text>
             </TouchableOpacity>

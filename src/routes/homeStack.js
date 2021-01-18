@@ -86,23 +86,26 @@ const HomeTabRoute = () => {
 };
 
 const HomeStackRoot = () => {
+  const options = {
+    headerTintColor: '#D0C9D6',
+    headerTitleStyle: {
+      display: 'none',
+    },
+    headerStyle: {elevation: 0, backgroundColor: '#fff'},
+  };
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen
         name="HomeTab"
         component={HomeTabRoute}
-        options={{headerShown: false}}
+        options={options}
       />
       <HomeStack.Screen
         name="Chats"
         component={Chats}
-        options={{headerShown: false}}
+        options={options}
       />
-      <HomeStack.Screen
-        name="Schedule"
-        component={Schedule}
-        options={{headerShown: false}}
-      />
+      <HomeStack.Screen name="Schedule" component={Schedule} options={options} />
     </HomeStack.Navigator>
   );
 };
